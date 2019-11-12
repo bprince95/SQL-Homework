@@ -2,8 +2,9 @@ List the following details of each employee:
 employee number, 
 last name, 
 first name, 
-gender, and salary.
-
+gender, 
+and salary.
+--------------------------------------------------------
 SELECT emp.emp_no, 
 	emp.last_name, 
 	emp.first_name,
@@ -12,7 +13,7 @@ SELECT emp.emp_no,
 FROM employees as emp
 	LEFT JOIN salaries as sal
 		ON (emp.emp_no = sal.emp_no);
-
+--------------------------------------------------------
 
 
 List employees who were hired in 1986.
@@ -52,6 +53,20 @@ employee number,
 last name, 
 first name, 
 and department name.
+-----------------------------------------------------------
+
+SELECT emp.emp_no, 
+emp.first_name, 
+emp.last_name, 
+dept.dept_name
+FROM employees as emp
+	INNER JOIN dept_emp
+		ON (emp.emp_no = dept_emp.emp_no)
+	INNER JOIN dept
+		ON (dept_emp.dept_no = dept.dept_no);
+
+
+-----------------------------------------------------------
 
 
 List all employees whose first name is "Hercules" and last names begin with "B."
